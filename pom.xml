@@ -26,13 +26,6 @@
         <main.basedir>${basedir}/../..</main.basedir>
         <docker.image.prefix>styletang</docker.image.prefix>
     </properties>
-    <repositories>
-        <repository>
-            <id>alimaven</id>
-            <name>aliyun maven</name>
-            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
-        </repository>
-    </repositories>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
