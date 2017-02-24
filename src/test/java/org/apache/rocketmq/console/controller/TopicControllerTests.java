@@ -37,7 +37,7 @@ import static org.junit.Assert.assertThat;
 @SpringApplicationConfiguration(classes = App.class)
 //@WebAppConfiguration // 使用@WebIntegrationTest注解需要将@WebAppConfiguration注释掉
 @WebIntegrationTest("server.port:8080")
-public class ClusterControllerTests{
+public class TopicControllerTests {
 
     private TestRestTemplate template = new TestRestTemplate();
     @Value("${server.port}")// 注入端口号
@@ -46,7 +46,7 @@ public class ClusterControllerTests{
 
     @Test
     public void testListQuery() throws Exception {
-        String url = "http://localhost:"+port+"/cluster/list.query";
+        String url = "http://localhost:"+port+"/topic/list.query";
         String result = template.getForObject(url, String.class);
         System.out.println(result);
         assertNotNull(result);
@@ -56,8 +56,8 @@ public class ClusterControllerTests{
 
 
     @Test
-    public void testBrokerConfigQuery() throws Exception {
-        String url = "http://localhost:"+port+"/cluster/brokerConfig.query";
+    public void testStats() throws Exception {
+        String url = "http://localhost:"+port+"/topic/stats.query";
         String result = template.getForObject(url, String.class);
         System.out.println(result);
         assertNotNull(result);
